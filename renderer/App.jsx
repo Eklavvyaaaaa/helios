@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import TelemetryDashboard from './TelemetryDashboard';
+import MapPanel from './MapPanel';
 
 function App() {
   const [telemetry, setTelemetry] = useState(null);
+  const [path, setPath] = useState([]);
 
   useEffect(() => {
     if (window.api && window.api.onTelemetryUpdate) {
       window.api.onTelemetryUpdate((data) => {
         setTelemetry(data);
+        if (data.lat !== undefined && data.lon !== undefined) {
+          setPath(prevPath => {
+            const newPath = [...prevPath, [data.lat, data.lon]];
+            if (newPath.length > 200) {
+               newPath.shift(); // Keep only the last 200 points
+            }
+            return newPath;
+          });
+        }
       });
     } else {
       console.warn("window.api.onTelemetryUpdate is not available. Ensure preload script is loaded.");
@@ -24,8 +35,13 @@ function App() {
         </div>
       </header>
       
-      <main className="app-content">
-        <TelemetryDashboard telemetry={telemetry} />
+      <main className="app-content split-layout">
+        <div className="left-panel">
+          <TelemetryDashboard telemetry={telemetry} />
+        </div>
+        <div className="right-panel">
+          <MapPanel telemetry={telemetry} path={path} />
+        </div>
       </main>
     </div>
   );

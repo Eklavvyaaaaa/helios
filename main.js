@@ -43,17 +43,22 @@ function createWindow() {
 function startMockMode() {
   console.log('[Mock Mode] Generating simulated telemetry data...');
   let seq = 0;
+  let currentLat = 18.6012345;
+  let currentLon = 73.8012345;
   
   mockInterval = setInterval(() => {
     if (!mainWindow) return;
 
     seq++;
+    currentLat += (Math.random() - 0.45) * 0.0001; // slight drift
+    currentLon += (Math.random() - 0.45) * 0.0001;
+
     const telemetry = {
       type: 'telemetry',
       device: 1,
       seq: seq,
-      lat: 18.6012345 + (Math.random() - 0.5) * 0.001,
-      lon: 73.8012345 + (Math.random() - 0.5) * 0.001,
+      lat: currentLat,
+      lon: currentLon,
       alt_m: (12.5 + Math.random() * 2).toFixed(1),
       heading: (245.3 + Math.random() * 5).toFixed(1),
       roll: ((Math.random() - 0.5) * 10).toFixed(1),
