@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drone Monitoring & Control System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Login Section -->
+  <div id="login-section">
+    <h1>Drone Monitoring & Control System</h1>
+    <form id="login-form">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="dashboard-section" style="display:none;">
+    <h2>Dashboard</h2>
+
+    <div id="drone-status">
+      <p>Drone Status: <span id="status">Idle</span></p>
+      <p>Battery Level: <span id="battery">100%</span></p>
+    </div>
+
+    <!-- Control Panel -->
+    <div id="control-panel">
+      <h3>Control Panel</h3>
+      <button onclick="droneAction('start')">Start</button>
+      <button onclick="droneAction('stop')">Stop</button>
+      <div id="direction-controls">
+        <button onclick="droneAction('forward')">Forward</button>
+        <button onclick="droneAction('backward')">Backward</button>
+        <button onclick="droneAction('left')">Left</button>
+        <button onclick="droneAction('right')">Right</button>
+      </div>
+    </div>
+
+    <!-- Alerts Section -->
+    <div id="alerts-section">
+      <h3>Alerts</h3>
+      <ul id="alerts-list">
+        <li>No alerts yet.</li>
+      </ul>
+    </div>
+
+    <!-- Reports Section -->
+    <div id="reports-section">
+      <h3>Reports</h3>
+      <p>No reports available yet.</p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

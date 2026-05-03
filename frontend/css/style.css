@@ -1,0 +1,115 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #00d4ff;
+  margin-bottom: 15px;
+}
+
+/* Login Section */
+#login-section {
+  max-width: 400px;
+  margin: 80px auto;
+  text-align: center;
+}
+
+#login-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #00d4ff;
+  border-radius: 5px;
+  background: #16213e;
+  color: #e0e0e0;
+}
+
+#login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00d4ff;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#login-form button:hover {
+  background-color: #0099bb;
+}
+
+/* Dashboard Section */
+#dashboard-section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#drone-status {
+  background: #16213e;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Control Panel */
+#control-panel {
+  background: #16213e;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#control-panel button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #00d4ff;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#control-panel button:hover {
+  background-color: #0099bb;
+}
+
+#direction-controls {
+  margin-top: 10px;
+}
+
+/* Alerts Section */
+#alerts-section {
+  background: #16213e;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#alerts-list {
+  list-style: none;
+  padding: 0;
+}
+
+#alerts-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #333;
+}
+
+/* Reports Section */
+#reports-section {
+  background: #16213e;
+  padding: 15px;
+  border-radius: 8px;
+}
